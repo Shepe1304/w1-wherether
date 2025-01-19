@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
+import MapComponent from "./MapComponent";
 
 const LandingPage = () => {
   const [countries, setCountries] = useState([]);
@@ -48,7 +49,14 @@ const LandingPage = () => {
           return <option value={country.name}>{country.name}</option>;
         })}
       </select>
-      <div>{countryName}</div>
+      {countryName != "Select a country" ? (
+        <MapComponent
+          countryName={countryName}
+          countryCode={countryCode}
+          countryLat={countryLat}
+          countryLng={countryLng}
+        />
+      ) : null}
     </div>
   );
 };
