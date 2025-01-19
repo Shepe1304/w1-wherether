@@ -1,3 +1,6 @@
+# w1-wherether
+An application where you can view the location (map integrated), weather, and AI travel analysis of countries all over the world.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
