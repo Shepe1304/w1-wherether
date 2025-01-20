@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
 import MapComponent from "./MapComponent";
+import CurrentWeather from "./CurrentWeather";
 
 const LandingPage = () => {
   const [countries, setCountries] = useState([]);
@@ -50,12 +51,20 @@ const LandingPage = () => {
         })}
       </select>
       {countryName != "Select a country" ? (
-        <MapComponent
-          countryName={countryName}
-          countryCode={countryCode}
-          countryLat={countryLat}
-          countryLng={countryLng}
-        />
+        <div>
+          <MapComponent
+            countryName={countryName}
+            countryCode={countryCode}
+            countryLat={countryLat}
+            countryLng={countryLng}
+          />
+          <CurrentWeather
+            countryName={countryName}
+            countryCode={countryCode}
+            countryLat={countryLat}
+            countryLng={countryLng}
+          />
+        </div>
       ) : null}
     </div>
   );
